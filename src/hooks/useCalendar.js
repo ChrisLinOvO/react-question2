@@ -186,6 +186,8 @@ const useCalendar = (monthNames = monthNamesArr) => {
     getPrevMonth,
     getNextMonth,
     handleDateClick,
+    setStartDate,
+    setEndDate
   };
 };
 

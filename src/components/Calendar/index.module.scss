@@ -51,10 +51,10 @@ $non-current-month-color: #757575;
 
     &:hover {
       background-color: $button-hover-color;
-    }
 
-    &:active {
-      background-color: #006edc;
+      &.nonCurrentMonth {
+        cursor: not-allowed;
+      }
     }
   }
 
@@ -64,5 +64,10 @@ $non-current-month-color: #757575;
 
   .nonCurrentMonth {
     color: $non-current-month-color;
+  }
+
+  .selectedRange {
+    background-color: #006edc;
+    color: white;
   }
 }

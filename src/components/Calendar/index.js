@@ -1,6 +1,4 @@
 import React from "react";
-import clx from "classnames";
-import _ from "lodash";
 import useCalendar from "../../hooks/useCalendar";
 import styles from "./index.module.scss";
 
@@ -10,14 +8,14 @@ const Calendar = () => {
     selectedDate,
     todayFormatted,
     monthNames,
+    startDate,
+    endDate,
     getNextMonth,
     getPrevMonth,
+    handleDateClick,
   } = useCalendar();
 
-  const dateClickHandler = (date) => {
-    console.log(date);
-  };
-
+  console.log(`開始日期: ${startDate} - 結束日期: ${endDate}`);
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -32,23 +30,35 @@ const Calendar = () => {
         </button>
       </div>
       <div className={styles.days}>
-        {_.map(calendarRows, (cols, i) => (
-          <div key={_.get(cols, "[0].date")}>
-            {_.map(cols, (col) => {
+        {Object.values(calendarRows).map((cols) => (
+          <div key={cols[0].date}>
+            {cols.map((col) => {
               const { classes = [], date, value } = col;
+              const isNonCurrentMonth =
+                classes.includes("in-prev-month") ||
+                classes.includes("in-next-month");
+
+              const startDateObj = new Date(startDate);
+              const endDateObj = new Date(endDate);
+              const currentDateObj = new Date(date);
+              const classNames = [
+                styles.col,
+                date === todayFormatted && styles.today,
+                isNonCurrentMonth && styles.nonCurrentMonth,
+                currentDateObj >= startDateObj &&
+                  currentDateObj <= endDateObj &&
+                  styles.selectedRange,
+              ]
+                .filter(Boolean)
+                .join(" ");
+
               return (
                 <span
                   key={date}
-                  className={clx(
-                    styles.col,
-                    { [styles.today]: date === todayFormatted },
-                    {
-                      [styles.nonCurrentMonth]:
-                        _.includes(classes, "in-prev-month") ||
-                        _.includes(classes, "in-next-month"),
-                    }
-                  )}
-                  onClick={() => dateClickHandler(date)}
+                  className={classNames}
+                  onClick={() =>
+                    isNonCurrentMonth ? null : handleDateClick(date)
+                  }
                 >
                   {`${value}日`}
                 </span>

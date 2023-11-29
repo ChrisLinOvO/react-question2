@@ -1,0 +1,68 @@
+$container-width: 350px;
+$container-height: 240px;
+$font-size: 16px;
+$header-height: 44px;
+$button-size: 44px;
+$button-hover-color: #e6e6e6;
+$today-bg-color: #ffff76;
+$non-current-month-color: #757575;
+
+.container {
+  width: $container-width;
+  height: $container-height;
+  font-size: $font-size;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $header-height;
+    margin-bottom: 16px;
+  }
+
+  .calendarNext,
+  .calendarPrev {
+    width: $button-size;
+    height: $button-size;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+  }
+
+  .month {
+    flex: 1;
+    text-align: center;
+  }
+
+  .col {
+    display: inline-block;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 50px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+
+    &:active {
+      background-color: #006edc;
+    }
+  }
+
+  .today {
+    background-color: $today-bg-color;
+  }
+
+  .nonCurrentMonth {
+    color: $non-current-month-color;
+  }
+}

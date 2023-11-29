@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import useCalendar from '../../src/hooks/useCalendar';
+import useCalendar from '../../hooks/useCalendar';
 
 // 模擬當前日期
 jest.mock('react', () => ({

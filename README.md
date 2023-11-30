@@ -6,10 +6,11 @@ This project is a Calendar UI built with React using create-react-app.
 
 [Demo Link](https://chrislinovo.github.io/react-question2/)
 
+<img width="395" alt="截圖 2023-11-30 下午2 21 07" src="https://github.com/ChrisLinOvO/react-question2/assets/65522190/3aaa6bd8-6adc-4f13-b578-fbf465a585e7">
 
 ## Introduction
 
-As part of an interview challenge available at http://example.com, the task involves creating a Calendar Component. 
+As part of an interview challenge available at [react-question2.pdf](https://github.com/ChrisLinOvO/react-question2/files/13509153/react-question2.pdf), the task involves creating a Calendar Component. 
 
 First, I build a "custom-hook" designed to render the Calendar UI with dates, states, and trigger functional events...，These features are exported to be utilized by the "Calendar Component".
 
@@ -70,4 +71,5 @@ The deployed version can be accessed at https://chrislinovo.github.io/react-ques
 If you have any questions or feedback, feel free to contact the project maintainer:
 
 Name: 林志隆
+
 Email: qq2120621@gmail.com

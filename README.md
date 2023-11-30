@@ -8,7 +8,7 @@ This project is a Calendar UI built with React using create-react-app.
 
 <img width="395" alt="截圖 2023-11-30 下午2 21 07" src="https://github.com/ChrisLinOvO/react-question2/assets/65522190/3aaa6bd8-6adc-4f13-b578-fbf465a585e7">
 
-- tip: If Calendar is running, you can open the Chrome Devtools console and print out the start date and end date selected by the calendar.
+- tip: If Calendar is running, you can open the "Chrome Devtools Console" and print out the start date and end date selected by the calendar.
 
 ## Introduction
 
